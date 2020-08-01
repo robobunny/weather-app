@@ -8,8 +8,9 @@ const app = express();
 // Getting port value for Heroku
 const port = process.env.PORT || 3000;
 
-// Define Paths for Express
-const publicPath = path.join(__dirname,'../public');
+// Serve static files from React client
+const clientPath = 'client/build';
+app.use(express.static(path.join(__dirname, clientPath)))
 
 app.get('/api/weather',(req, res)=>{
   if (!req.query.address) {
@@ -40,6 +41,11 @@ app.get('/api/weather',(req, res)=>{
       }
     });
   }
+})
+
+// Fallback to index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, clientPath, 'index.html'));
 })
 
 app.listen(port,()=>{
