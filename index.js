@@ -11,15 +11,7 @@ const port = process.env.PORT || 3000;
 // Define Paths for Express
 const publicPath = path.join(__dirname,'../public');
 
-app.get('',(req, res)=>{
-  res.send('Hello Cruel World!')
-});
-
-app.get('/help',(req,res) => {
-  res.send('Help Me!')
-});
-
-app.get('/weather',(req, res)=>{
+app.get('/api/weather',(req, res)=>{
   if (!req.query.address) {
     return res.send({
       error: "You must provide an address!"
