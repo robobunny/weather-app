@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import Report from './Report';
 
 const Weather = () => {
-  const apiBaseUrl = "//localhost:3000/weather/"
   const [weatherInfo, setWeatherInfo] = useState({});
   
-  const getWeather = async function (locUrl) {
+  const getWeather = async function (url) {
     try {
-      const weatherObj = await fetch(locUrl, { mode: "cors" })
+      const weatherObj = await fetch(url)
       return weatherObj.json();
     } catch (err) {
       throw new Error(err);
@@ -17,8 +16,7 @@ const Weather = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const address = (e.target.location.value);
-    const url = apiBaseUrl + `?address=${encodeURI(address)}`;
-    console.log('fetching... ' + url);
+    const url = `/api/weather?address=${encodeURI(address)}`;
     getWeather(url).then((data) => {
       setWeatherInfo(data);
     })
@@ -26,7 +24,7 @@ const Weather = () => {
 
   return (
     <div className="app">
-      { !!weatherInfo.location && <Report weatherInfo={weatherInfo} /> }
+        { !!weatherInfo.location && <Report weatherInfo={weatherInfo} /> }
       <form 
         id="weather-form"
         onSubmit={handleSubmit}>

@@ -7,3 +7,5 @@ const Report = (props) => (
     <p>{`Temperature: ${props.weatherInfo.forecast.temp}°F, feels like ${props.weatherInfo.forecast.feel}°`}</p>
   </div>
 )
+
+export default Report;
