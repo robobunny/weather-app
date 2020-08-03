@@ -1,0 +1,35 @@
+// Fira Code 400, 700
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+// Raleway 300, 400, 700, 900 & italic 300, 400, 700, 900
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+// Cantarell 400, 700 & italic 400.
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400&display=swap');
+
+// Variable definitions:
+
+  // Fonts
+  $heading-font: 'Raleway', sans-serif;
+  $text-font: 'Cantarell', serif;
+  $mono-font: 'Fira Code', monospace;
+
+  // Sizes
+  $font-xs: 1.2rem;
+  $font-sm: 1.4rem;
+  $font-md: 1.6rem;
+  $font-lg: 1.8rem;
+  $font-xl: 2.0rem;
+  $font-2xl: 2.4rem;
+  $font-3xl: 2.8rem;
+  $font-4xl: 3.6rem;
+  $font-5xl: 4.8rem;
+  $font-6xl: 6.4rem;
+
+  // Colors
+  $txt-primary: $bunny-800;
+  $txt-black: $dkgreen-800;
+
+// Typography styles
+
+.body-article {
+  line-height: 130%;
+}
